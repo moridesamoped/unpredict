@@ -7,19 +7,19 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
             background-color: #f0f2f5;
         }
 
         .container {
             background-color: white;
-            padding: 2rem;
+            padding: 1rem;
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
         h1 {
@@ -28,8 +28,8 @@
         }
 
         #prompt-display {
-            font-size: 1.2rem;
-            min-height: 100px;
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            min-height: auto;
             margin: 20px 0;
             padding: 20px;
             border-radius: 5px;
@@ -38,7 +38,9 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            white-space: pre;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-width: 100%;
         }
 
         button {
@@ -48,12 +50,33 @@
             padding: 12px 24px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: clamp(0.875rem, 3vw, 1rem); /* Responsive font size */
             transition: background-color 0.3s;
+            width: auto; /* Allow button to be responsive */
+            max-width: 100%; /* Ensure button doesn't overflow */
+            margin: 10px auto; /* Center the button */
         }
 
         button:hover {
             background-color: #1ae861;
+
+              /* Add media queries for different screen sizes */
+    @media screen and (max-width: 600px) {
+        .container {
+            padding: 0.8rem;
+            margin: 0.5rem;
+        }
+
+        #prompt-display {
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        p {
+            margin: 8px 0;
+            font-size: clamp(0.875rem, 3vw, 1rem);
+        }
+    }
         }
     </style>
 </head>
