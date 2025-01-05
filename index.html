@@ -79,21 +79,18 @@
     
         ];
 
- 
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const button = document.getElementById('generate-button');
+  function generatePrompt() {
             const promptDisplay = document.getElementById('prompt-display');
-            
-            button.addEventListener('click', function() {
-                const randomIndex = Math.floor(Math.random() * prompts.length);
-                promptDisplay.textContent = prompts[randomIndex];
-                promptDisplay.style.opacity = 0;
-                setTimeout(() => {
-                    promptDisplay.style.opacity = 1;
-                }, 100);
-            });
-        });
+            const randomIndex = Math.floor(Math.random() * prompts.length);
+            promptDisplay.textContent = prompts[randomIndex];
+            promptDisplay.style.opacity = 0;
+            setTimeout(() => {
+                promptDisplay.style.opacity = 1;
+            }, 100);
+        }
+
+        
+         
     </script>
 </body>
 </html>
