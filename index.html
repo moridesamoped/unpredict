@@ -79,15 +79,18 @@
     
         ];
 
-  function generatePrompt() {
-            const promptDisplay = document.getElementById('prompt-display');
-            const randomIndex = Math.floor(Math.random() * prompts.length);
-            promptDisplay.textContent = prompts[randomIndex];
-            promptDisplay.style.opacity = 0;
-            setTimeout(() => {
-                promptDisplay.style.opacity = 1;
-            }, 100);
-        }
+function generatePrompt() {
+    const promptDisplay = document.getElementById('prompt-display');
+    const randomIndex = Math.floor(Math.random() * prompts.length);
+    // Replace multiple newlines with HTML breaks and preserve spacing
+    const formattedPrompt = prompts[randomIndex].replace(/\n/g, '<br>');
+    promptDisplay.innerHTML = formattedPrompt; // Use innerHTML instead of textContent
+    promptDisplay.style.opacity = 0;
+    setTimeout(() => {
+        promptDisplay.style.opacity = 1;
+    }, 100);
+}
+  
 
         
          
