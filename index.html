@@ -102,7 +102,7 @@
     const randomIndex = Math.floor(Math.random() * prompts.length);
     // Replace multiple newlines with HTML breaks and preserve spacing
     const formattedPrompt = prompts[randomIndex].replace(/\n/g, '<br>');
-    promptDisplay.innerHTML = formattedPrompt; // Use innerHTML instead of textContent
+    promptDisplay.textContent = prompts[randomIndex]; // Use textContent instead of innerhtml
     promptDisplay.style.opacity = 0;
     setTimeout(() => {
         promptDisplay.style.opacity = 1;
